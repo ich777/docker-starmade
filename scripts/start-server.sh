@@ -70,8 +70,12 @@ else
 fi
 
 echo "---Preparing Server---"
+echo "---Checking if 'server.cfg' is present---"
 if [ ! -f ${DATA_DIR}/StarMade/server.cfg ]; then
+	echo "---No 'server.cfg' found, copying---"
 	cp /tmp/server.cfg ${DATA_DIR}/StarMade/
+else
+	echo "---'server.cfg' found!---"
 fi
 chmod -R ${DATA_PERM} ${DATA_DIR}
 
