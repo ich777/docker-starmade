@@ -31,7 +31,7 @@ if [ -z "$(find ${DATA_DIR}/runtime -name jre*)" ]; then
 else
 	echo "---Runtime found---"
 fi
-export RUNTIME_NAME="$(ls -d ${DATA_DIR}/runtime/* | cut -d '/' -f3)" # <--------- TODO - tail -la
+export RUNTIME_NAME="$(ls -d ${DATA_DIR}/runtime/* | cut -d '/' -f4)" # <--------- TODO - tail -la
 
 echo "---Checking for Starmade Starter executable ---"
 if [ ! -f ${DATA_DIR}/StarMade-Starter.jar ]; then
