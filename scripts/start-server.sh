@@ -69,12 +69,9 @@ else
 	${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java -jar ${DATA_DIR}/StarMade-Starter.jar -nogui
 fi
 
-echo "---Sleep zZz---"
-sleep infinity
+echo "---Preparing Server---"
+chmod -R ${DATA_PERM} ${DATA_DIR}
 
-#echo "---Preparing Server---"
-# # <--------- TODO - tail -la
-#chmod -R ${DATA_PERM} ${DATA_DIR}
-
-#echo "---Starting Server---"
-#${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java ${EXTRA_JVM_PARAMS} -Xmx${XMX_SIZE}M -Xms${XMS_SIZE}M -jar ${DATA_DIR}/${JAR_NAME}.jar nogui ${GAME_PARAMS}
+echo "---Starting Server---"
+cd ${DATA_DIR}/StarMade
+${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java ${EXTRA_JVM_PARAMS} -Xmx${XMX_SIZE}M -Xms${XMS_SIZE}M -jar ${DATA_DIR}/StarMade/StarMade.jar -server ${GAME_PARAMS}
