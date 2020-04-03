@@ -28,8 +28,8 @@ docker run --name StarMade -d \
 	--env 'XMX_SIZE=1024' \
     --env 'XMS_SIZE=1024' \
     --env 'STARTER_PARAMS=-nogui' \
-	--env 'UID=99' \
-	--env 'GID=100' \
+    --env 'UID=99' \
+    --env 'GID=100' \
 	--env 'UMASK=000' \
 	--env 'DATA_PERM=770' \
 	--volume /mnt/user/appdata/starmade:/starmade \
