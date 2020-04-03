@@ -5,6 +5,7 @@ LABEL maintainer="admin@minenet.at"
 ENV DATA_DIR="/starmade"
 ENV RUNTIME_NAME="basicjre"
 ENV JAR_NAME="template"
+ENV DL_URL=""
 ENV GAME_PARAMS=""
 ENV EXTRA_JVM_PARAMS=""
 ENV UMASK=000
