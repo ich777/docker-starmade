@@ -70,7 +70,13 @@ else
 fi
 
 echo "---Preparing Server---"
+if [ ! -f ${DATA_DIR}/StarMade/server.cfg ]; then
+	cp /tmp/server.cfg ${DATA_DIR}/StarMade/
+fi
 chmod -R ${DATA_PERM} ${DATA_DIR}
+
+echo "---Sleep zZz---"
+sleep infinity
 
 echo "---Starting Server---"
 cd ${DATA_DIR}/StarMade
