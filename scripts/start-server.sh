@@ -64,7 +64,8 @@ if [ ! -d ${DATA_DIR}/StarMade ]; then
 		sleep infinity
 	fi
 else
-	echo "---Starmade filese found!---"
+	echo "---Starmade filese found, checking for updates---"
+	${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java -jar ${DATA_DIR}/StarMade-Starter.jar -nogui
 fi
 
 echo "---Sleep zZz---"
