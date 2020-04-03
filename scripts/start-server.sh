@@ -58,7 +58,7 @@ echo "---Checking for Starmade files---"
 if [ ! -d ${DATA_DIR}/StarMade ]; then
 	cd ${DATA_DIR}
 	echo "---Starmade files not found, downlaoding---"
-	${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java -jar ${DATA_DIR}/StarMade-Starter.jar -nogui
+	${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java -jar ${DATA_DIR}/StarMade-Starter.jar ${STARTER_PARAMS}
 	if [ ! -d ${DATA_DIR}/StarMade ]; then
 		echo "---Something went wront, can't download Starmade files, putting server into sleep mode---"
 		sleep infinity
@@ -66,7 +66,7 @@ if [ ! -d ${DATA_DIR}/StarMade ]; then
 else
 	echo "---Starmade files found, checking for updates---"
 	cd ${DATA_DIR}
-	${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java -jar ${DATA_DIR}/StarMade-Starter.jar -nogui
+	${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java -jar ${DATA_DIR}/StarMade-Starter.jar ${STARTER_PARAMS}
 fi
 
 echo "---Preparing Server---"
@@ -78,9 +78,6 @@ else
 	echo "---'server.cfg' found!---"
 fi
 chmod -R ${DATA_PERM} ${DATA_DIR}
-
-echo "---Sleep zZz---"
-sleep infinity
 
 echo "---Starting Server---"
 cd ${DATA_DIR}/StarMade
