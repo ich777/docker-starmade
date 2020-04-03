@@ -31,6 +31,7 @@ if [ -z "$(find ${DATA_DIR}/runtime -name jre*)" ]; then
 else
 	echo "---Runtime found---"
 fi
+export RUNTIME_NAME="$(ls -d ${DATA_DIR}/runtime/* | cut -d '/' -f3)" # <--------- TODO - tail -la
 
 echo "---Checking for Starmade Starter executable ---"
 if [ ! -f ${DATA_DIR}/StarMade-Starter.jar ]; then
@@ -56,7 +57,7 @@ fi
 echo "---Checking for Starmade files---"
 if [ ! -d ${DATA_DIR}/StarMade ]; then
 	cd ${DATA_DIR}
-	echo "---Sarmade files not found, downlaoding---"
+	echo "---Starmade files not found, downlaoding---"
 	${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java -jar ${DATA_DIR}/StarMade-Starter.jar -nogui
 	if [ ! -d ${DATA_DIR}/StarMade ]; then
 		echo "---Something went wront, can't download Starmade files, putting server into sleep mode---"
@@ -70,8 +71,8 @@ echo "---Sleep zZz---"
 sleep infinity
 
 #echo "---Preparing Server---"
-#export RUNTIME_NAME="$(ls -d ${DATA_DIR}/runtime/* | cut -d '/' -f3)" # <--------- TODO - tail -la
+# # <--------- TODO - tail -la
 #chmod -R ${DATA_PERM} ${DATA_DIR}
-#
+
 #echo "---Starting Server---"
 #${DATA_DIR}/runtime/${RUNTIME_NAME}/bin/java ${EXTRA_JVM_PARAMS} -Xmx${XMX_SIZE}M -Xms${XMS_SIZE}M -jar ${DATA_DIR}/${JAR_NAME}.jar nogui ${GAME_PARAMS}
